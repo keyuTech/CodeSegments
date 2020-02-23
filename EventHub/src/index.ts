@@ -1,12 +1,10 @@
 class EventHub {
     events = {};
     on(eventName, fn) {
-        if (this.events[eventName] !== undefined) {
-            this.events[eventName].push(fn)
-        } else {
+        if (this.events[eventName] === undefined) {
             this.events[eventName] = []
-            this.events[eventName].push(fn)
         }
+        this.events[eventName].push(fn)
     }
     emit(eventName) {
         if (this.events[eventName] === undefined) return
