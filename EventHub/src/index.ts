@@ -1,19 +1,21 @@
 class EventHub {
-    events = {};
-    on(eventName, fn) {
+    private events: {[key: string]: Array<Function>} = {};
+    on(eventName: string, fn: Function) {
         if (this.events[eventName] === undefined) {
             this.events[eventName] = []
         }
         this.events[eventName].push(fn)
     }
-    emit(eventName) {
-        if (this.events[eventName] === undefined) return
-        this.events[eventName].forEach(fn => fn())
+    emit(eventName: string, data?: unknown) {
+        const eventList = this.events[eventName];
+        if (eventList === undefined) return;
+        eventList.forEach((fn: Function) => fn(data))
     }
-    off(eventName, fn) {
-        if (this.events[eventName] === undefined) return
-        const index = this.events[eventName].indexOf(fn)
-        index !== -1 && this.events[eventName].splice(index, 1)
+    off(eventName: string, fn: Function) {
+        const eventList = this.events[eventName];
+        if (eventList === undefined) return;
+        const index = eventList.indexOf(fn);
+        index !== -1 && eventList.splice(index, 1)
     }
 }
 

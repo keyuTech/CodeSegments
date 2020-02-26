@@ -1,7 +1,8 @@
 import EventHub from '../src/index';
 
-const fn1 = () => {
+const fn1 = (x) => {
     console.log('eventHub .on method')
+    console.log(x)
 }
 const fn2 = () => {
     console.log('eventHub .off method')
@@ -20,7 +21,7 @@ const testOnMethod = () => {
 const testEmitMethod = () => {
     const eventHub = new EventHub
     eventHub.on('on', fn1)
-    eventHub.emit('on')
+    eventHub.emit('on', 'xxx')
 }
 
 const testOffMethod = () => {
