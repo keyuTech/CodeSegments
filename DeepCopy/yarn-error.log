@@ -1,0 +1,46 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Users/wangkeyu/.rvm/gems/ruby-2.6.3/bin:/Users/wangkeyu/.rvm/gems/ruby-2.6.3@global/bin:/Users/wangkeyu/.rvm/rubies/ruby-2.6.3/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin:/Users/wangkeyu/go/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/aria2/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:.:/Users/wangkeyu/.rvm/bin:/Users/wangkeyu/go/bin
+
+Yarn version: 
+  1.10.1
+
+Node version: 
+  8.12.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/wangkeyu/Documents/workspace/codeSegments/DeepCopy/package.json: Unexpected token } in JSON at position 265
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1136:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:109:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "DeepCopy",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+      "test": "mocha -r test/**/*.ts"
+    },
+    "devDependencies": {
+      "chai": "^4.2.0",
+      "mocha": "^6.2.0",
+      "sinon": "^7.4.1",
+      "sinon-chai": "^3.3.0",
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
