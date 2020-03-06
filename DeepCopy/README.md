@@ -33,3 +33,4 @@ JSON.parse(JSON.stringify(obj))
     - 在判断源数据为object之后，新建 `cachedResult` 
     作为检测属性是否已拷贝的依据，并在每次遍历赋值之前将源数据的对应属性和已拷贝的对应属性存入cache `cache.push([source, result])`
     - 新建 `findCache` 帮助函数，用于查找属性是否拷贝，使用源数据的属性作为判断，并返回已拷贝的属性
+    - 在检测object特殊类型之前，首先判断是否已拷贝，如已拷贝，则返回已拷贝的属性
